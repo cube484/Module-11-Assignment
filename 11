@@ -1,0 +1,66 @@
+namespace program
+{
+    using static System.Console;
+
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            // Create three decimal variables
+            decimal num1;
+            decimal num2;
+            decimal answer = 0;
+
+            // Ask the user for two numbers
+            Write("Enter your first number: ");
+            num1 = Convert.ToDecimal(ReadLine());
+
+            Write("Enter your second number: ");
+            num2 = Convert.ToDecimal(ReadLine());
+
+            // Ask the user to choose an operation
+            WriteLine();
+            WriteLine("Choose a math operation:");
+            WriteLine("1 - Addition");
+            WriteLine("2 - Multiplication");
+            WriteLine("3 - Subtraction");
+            WriteLine("4 - Division");
+
+            Write("Enter your choice: ");
+            int choice = Convert.ToInt32(ReadLine());
+
+            // Perform the selected math operation
+            try
+            {
+                if (choice == 1)
+                {
+                    answer = num1 + num2;
+                }
+                else if (choice == 2)
+                {
+                    answer = num1 * num2;
+                }
+                else if (choice == 3)
+                {
+                    answer = num1 - num2;
+                }
+                else if (choice == 4)
+                {
+                    answer = num1 / num2;
+                }
+                else
+                {
+                    WriteLine("Invalid operation selected.");
+                    return;
+                }
+
+                // Display the answer
+                WriteLine("Your answer is: " + answer);
+            }
+            catch (Exception ex)
+            {
+                WriteLine("Error: " + ex.Message);
+            }
+        }
+    }
+}
